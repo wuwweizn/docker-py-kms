@@ -10,11 +10,11 @@ jobs:
   call-workflow:
     uses: thespad/actions/.github/workflows/build-image.yml@v8.0.5
     with:
-      repo_owner: "wuweizhineng@163.com"
+      repo_owner: "liyong763435720"
       app_name: "py-kms"
       release_type: "github_commit"
       release_url: "https://api.github.com/repos/Py-KMS-Organization/py-kms/commits/master"
-      dockerhub_user: "wuweizhineng@163.com"
+      dockerhub_user: "liyong763435720"
       target-arch: "64"
       sign_image: false
     secrets:
