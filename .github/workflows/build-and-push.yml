@@ -9,12 +9,12 @@ jobs:
   call-workflow:
     uses: thespad/actions/.github/workflows/build-image.yml@v8.0.5
     with:
-      repo_owner: "wuwweizn"              # 你的 GitHub 用户名
+      repo_owner: "wuweizhineng@163.com"              # 你的 GitHub 用户名
       app_name: "py-kms"
       release_type: "github_commit"
       release_url: "https://api.github.com/repos/Py-KMS-Organization/py-kms/commits/master"
       dockerhub_user: "liyong763435720"   # 你的 Docker Hub 用户名
-      ghcr_user: "wuwweizn"               # GHCR 用户名（新增参数，需要模板支持）
+      ghcr_user: "wuwueizhineng@163.com"               # GHCR 用户名（新增参数，需要模板支持）
       target-arch: "64"
       sign_image: false
     secrets:
