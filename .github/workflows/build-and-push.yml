@@ -1,4 +1,4 @@
-name: Build Image On Release
+name: Build Image On Release 12
 
 on:
   release:
@@ -20,4 +20,3 @@ jobs:
     secrets:
       dockerhub_password: ${{ secrets.DOCKER_PASSWORD }}
       ghcr_token: ${{ secrets.GH_PAT }}   # GHCR Token
-      repo_scoped_token: ${{ secrets.repo_scoped_token }}
