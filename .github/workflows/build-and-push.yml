@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: Py-KMS-Organization/py-kms
-          ref: ${{ github.event.release.tag_name }}
-      
+          ref: ${{ github.event.release.tag_name || 'main' }}
+
       # 2️⃣ 设置 Docker Buildx
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -43,7 +43,7 @@ jobs:
           push: true
           platforms: linux/amd64,linux/arm64
           tags: |
-            ghcr.io/wuwweizn/py-kms:${{ github.event.release.tag_name }}
+            ghcr.io/wuwweizn/py-kms:${{ github.event.release.tag_name || 'manual' }}
             ghcr.io/wuwweizn/py-kms:latest
-            ${{ secrets.DOCKER_USERNAME }}/py-kms:${{ github.event.release.tag_name }}
+            ${{ secrets.DOCKER_USERNAME }}/py-kms:${{ github.event.release.tag_name || 'manual' }}
             ${{ secrets.DOCKER_USERNAME }}/py-kms:latest
