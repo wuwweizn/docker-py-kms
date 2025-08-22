@@ -14,7 +14,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: Py-KMS-Organization/py-kms
-          ref: ${{ github.event.release.tag_name || 'main' }}
+          ref: ${{ github.event.release.tag_name || 'master' }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       # 2️⃣ 设置 Docker Buildx
       - name: Set up Docker Buildx
